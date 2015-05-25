@@ -72,7 +72,7 @@ void init(char *title)
     screen = SDL_CreateWindow(title,
                                   SDL_WINDOWPOS_CENTERED,
                                   SDL_WINDOWPOS_CENTERED,
-                                 800, 480,
+                                 500, 400,
                                   SDL_WINDOW_SHOWN);
  
     //On crée un renderer pour la SDL et on active la synchro verticale : VSYNC

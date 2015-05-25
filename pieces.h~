@@ -29,7 +29,5 @@ void piece_rotate(Piece *piece);
 void piece_rotate_backwards(Piece *piece);
 void piece_random(Piece *dest);
 void piece_new(Piece *piece);
-void piece_left(Piece *piece);
-void piece_right(Piece *piece);
 
 #endif

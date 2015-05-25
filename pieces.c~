@@ -208,16 +208,6 @@ void piece_new(Piece *piece)
     piece -> y_before = piece -> y = 1;
     piece -> t0 = piece -> t1 = 0;
 }
-void piece_left(Piece *piece){
-	if(x!=0){	
-	piece-> x=x-1;
-	}
-}
-void piece_right(Piece *piece){
-	if(x!=10){	
-	piece-> x=x+1;
-	}
-}
 
 static bool fullLine(int iLine) {
     int i = 0;
