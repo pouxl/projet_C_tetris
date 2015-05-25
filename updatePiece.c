@@ -8,7 +8,7 @@
 #include <SDL2/SDL_mixer.h>
 #include <piece.h>
 
-
+//gère l'action d'une piece en fonction de la touche du clavier
 void updtatePiece(Input *input)
 {
 	if(input->up==1){

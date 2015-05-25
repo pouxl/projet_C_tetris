@@ -1,23 +1,6 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <math.h>
-#include <SDL2/SDL.h>
-/* On inclut les libs supplémentaires */
-#include <SDL2/SDL_image.h>
-#include <SDL2/SDL_ttf.h>
-#include <SDL2/SDL_mixer.h>
-
-extern void cleanup(void);
-extern void delay(unsigned int frameLimit);
-extern void drawGame(void);
-extern void gestionInputs(Input *input);
-extern void getInput(Input *input);
-extern SDL_Renderer *getrenderer(void);
-extern void init(char *);
+#include "prototypes.h"
 
 Input input;
- 
  
 int main(int argc, char *argv[])
 {
@@ -26,6 +9,9 @@ int main(int argc, char *argv[])
  
     // Initialisation de la SDL 
     init("tetris");
+
+    // Chargement des ressources (graphismes)
+    loadGame();
  
     // Appelle la fonction cleanup à la fin du programme 
     atexit(cleanup);

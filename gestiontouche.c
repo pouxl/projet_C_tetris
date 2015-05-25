@@ -1,31 +1,8 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <math.h>
-#include <SDL2/SDL.h>
-/* On inclut les libs supplémentaires */
-#include <SDL2/SDL_image.h>
-#include <SDL2/SDL_ttf.h>
-#include <SDL2/SDL_mixer.h>
-
-
+#include "prototypes.h"
  
-
-// Structure pour gérer l'input (clavier puis joystick) 
-typedef struct Input
-{
- 
-    int left, right, up, down, pause;
- 
-} Input;
- 
-
-
-
 void gestionInputs(Input *input)
 {
-    //On gère le clavier (on rajoutera plus tard la gestion
-    //des joysticks)
+    //On gère le clavier
     getInput(input);
 }
  

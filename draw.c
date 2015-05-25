@@ -1,31 +1,69 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <math.h>
-#include <SDL2/SDL.h>
+#include "prototypes.h"
 
+void drawGame(){
+	// Affiche le fond (background) aux coordonnées (0,0)
+	drawImage(getBackground(), 0, 0);
+	int j;
+	int i;
+ 	for(j=1;j<400;j++)
+	{
+		drawImage(getWall(),1,j);
+	}
+	for(i=1;i<400;i++)
+	{
+		drawImage(getWall(),i,400);
+	}
 
-
-/* On inclut les libs supplémentaires */
-#include <SDL2/SDL_image.h>
-#include <SDL2/SDL_ttf.h>
-#include <SDL2/SDL_mixer.h>
-
-
-
-void drawGame(void)
+	// Affiche l'écran
+	SDL_RenderPresent(getrenderer());
+ 
+	// Délai pour laisser respirer le proc
+	SDL_Delay(1);
+ 
+}
+ 
+ 
+SDL_Texture *loadImage(char *name)
 {
  
-    // Remplis le renderer de noir, efface l'écran et l'affiche.
-    //SDL_RenderPresent() remplace SDL_Flip de la SDL 1.2
+	/* Charge les images avec SDL Image dans une SDL_Surface */
  
-    SDL_SetRenderDrawColor(getrenderer(), 0, 0, 0, 255);
-    SDL_RenderClear(getrenderer());
-    SDL_RenderPresent(getrenderer());
+	SDL_Surface *loadedImage = NULL;
+	SDL_Texture *texture = NULL;
+	loadedImage = IMG_Load(name);
  
-    // Délai pour laisser respirer le proc
-    SDL_Delay(1);
+	if (loadedImage != NULL)
+	{
+		// Conversion de l'image en texture
+		texture = SDL_CreateTextureFromSurface(getrenderer(), loadedImage);
+ 
+		// On se débarrasse du pointeur vers une surface
+		SDL_FreeSurface(loadedImage);
+		loadedImage = NULL;
+	}
+	else{
+		printf("L'image n'a pas pu être chargée! SDL_Error : %s\n", SDL_GetError());
+ 	}
+	return texture;
+ 	    
 }
+ 
+ 
+void drawImage(SDL_Texture *image, int x, int y)
+{
+ 
+	SDL_Rect dest;
+ 
+	/* Règle le rectangle à dessiner selon la taille de l'image source */
+	dest.x = x;
+	dest.y = y;
+ 
+	/* Dessine l'image entière sur l'écran aux coordonnées x et y */
+	SDL_QueryTexture(image, NULL, NULL, &dest.w, &dest.h);
+	SDL_RenderCopy(getrenderer(), image, NULL, &dest);
+ 
+}
+
  
 
 void delay(unsigned int frameLimit)
@@ -35,7 +73,7 @@ void delay(unsigned int frameLimit)
  
     if (frameLimit < ticks)
     {
-        return;
+	return;
     }
  
     if (frameLimit > ticks + 16)
@@ -48,4 +86,5 @@ void delay(unsigned int frameLimit)
         SDL_Delay(frameLimit - ticks);
     }
 }
+
 
