@@ -20,6 +20,8 @@ void init(char *);
 void initMaps(void);
 void loadGame(void);
 SDL_Texture *loadImage(char *name);
- 
- 
+SDL_Texture *getTitle(void);
+SDL_Texture *getScoreActuel(void);
+SDL_Texture *getBlack(void);
+
 #endif

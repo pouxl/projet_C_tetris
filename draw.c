@@ -3,6 +3,7 @@
 void drawGame(){
 	// Affiche le fond (background) aux coordonnées (0,0)
 	drawImage(getBackground(), 0, 0);
+	drawImage(getBlack(),420,0);
 	int j;
 	int i;
  	for(j=40;j<460;j++)
@@ -14,6 +15,8 @@ void drawGame(){
 	{
 		drawImage(getWall(),i,460);
 	}
+	drawImage(getTitle(),500,40);
+	drawImage(getScoreActuel(),450, 170);
 	// Affiche l'écran
 	SDL_RenderPresent(getrenderer());
  

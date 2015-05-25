@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "score.h"
-
+#include "prototypes.h"
 
 
 int score ;
@@ -13,6 +13,7 @@ void augmentescore(int point){
 
 void static EcritFichierDeScore(SCORE* tabScores)
 {
+	char* nom;
 
 	FILE* fichier = NULL;
 
@@ -20,25 +21,24 @@ void static EcritFichierDeScore(SCORE* tabScores)
 
 	if (fichier != NULL)
 	{
+		int i;
 		for(i=0;i<sizeof(tabScores);i++)
 		{
 		fprintf(fichier,"%d %s\n",score,nom);
 		}
 	}
 	fclose(fichier);
-
-	return 0
 }
 
 void static LitFichierDeScore(SCORE* tabScores){
 	FILE* fichier = NULL ;
 
 	fichier = fopen("score.txt", "r");
-
+	int i;
 	for (i=0;i<sizeof(tabScores);i++)
 	{
 		fgets(tabScores[i],10,fichier);
-		printf("%d"atoi(tabScores[i])
+		printf("%d",atoi(tabScores[i]));
 		
 	}
 

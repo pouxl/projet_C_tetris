@@ -1,6 +1,6 @@
 #ifndef TETRIS_PIECES_H
 #define TETRIS_PIECES_H
-
+#include "prototypes.h"
 #include "colors.h"
 //#include "definitions.h"
 
