@@ -5,15 +5,15 @@ void drawGame(){
 	drawImage(getBackground(), 0, 0);
 	int j;
 	int i;
- 	for(j=1;j<400;j++)
+ 	for(j=40;j<460;j++)
 	{
 		drawImage(getWall(),1,j);
+		drawImage(getWall(),400,j);	
 	}
 	for(i=1;i<400;i++)
 	{
-		drawImage(getWall(),i,400);
+		drawImage(getWall(),i,460);
 	}
-
 	// Affiche l'écran
 	SDL_RenderPresent(getrenderer());
  
