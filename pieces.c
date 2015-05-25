@@ -319,6 +319,7 @@ static void shiftMap() {
 void piece_fall () {
     int i;
     int j;
+    Piece *piece;
     //Variable qui indique si la pièce peut descendre ou pas
     int autorisee;
 
@@ -331,7 +332,6 @@ void piece_fall () {
         for (j = 1; j < (GAME_COLUMNS-1) && autorisee; j++) {
             if (map[j][i] < 10 && map[j][i]>0) {
                     autorisee = 0;
-                }
             }
         }
     }
@@ -369,6 +369,6 @@ void piece_fall () {
         }
         tetrisScoring(1);
         shiftMap();
-        piece_new();
+        piece_new(piece);
     }
 }
