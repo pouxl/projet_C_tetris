@@ -15,7 +15,7 @@ int map[GAME_LINES][GAME_COLUMNS];
 
 typedef struct {
     int n;
-    int matrix[4][16];
+    int matrix[16][4];
     Color color;
     int x;
     int y;
