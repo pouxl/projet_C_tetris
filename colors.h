@@ -1,0 +1,9 @@
+#ifndef TETRIS_COLORS_H
+#define TETRIS_COLORS_H
+
+typedef enum {
+    DARK_CYAN, DARK_RED, DARK_BROWN, DARK_MAGENTA, 
+    DARK_GRAY, DARK_GREEN, DARK_BLUE, WALL, EMPTY
+} Color;
+
+#endif
