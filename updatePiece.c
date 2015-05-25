@@ -1,26 +1,19 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <math.h>
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
-#include <SDL2/SDL_ttf.h>
-#include <SDL2/SDL_mixer.h>
-#include <piece.h>
+#include "prototypes.h"
+#include "pieces.h"
 
 //gère l'action d'une piece en fonction de la touche du clavier
 void updtatePiece(Input *input)
 {
 	if(input->up==1){
-		void piece_rotate(Piece *piece)
+        piece_rotate(Piece);
 	}
 	if(input->down==1){
-		void piece_rotate_backwards(Piece *piece)
-	}
+        piece_rotate_backwards(Piece);
+    }
 	if(input->left==1){
-		void piece_left(Piece *piece)
+        piece_left(Piece);
 	}
 	if(input->right==1){
-		void piece_right(Piece *piece)
+        piece_right(Piece);
 	}
 }

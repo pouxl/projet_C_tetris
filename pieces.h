@@ -2,6 +2,7 @@
 #define TETRIS_PIECES_H
 #include "prototypes.h"
 #include "colors.h"
+#include "prototypes.h"
 //#include "definitions.h"
 
 #define PIECE_COUNT 7
@@ -11,7 +12,9 @@
 #define PIECE_BLOCKS_SIZE 4
 #define GAME_COLUMNS 10
 #define GAME_LINES 20
+int score;
 int map[GAME_LINES][GAME_COLUMNS];
+int fin_partie;
 
 typedef struct {
     int n;
